@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Antepli Ali Ekber Usta Kebapçı BY YENER - Dijital Menü</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Cinzel for premium header & Inter for readability) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FFF9E5',
+                            300: '#FCE299',
+                            400: '#F3C453',
+                            500: '#D4AF37', // Classic Gold
+                            600: '#AA820A',
+                            700: '#846200',
+                        },
+                        amberDark: '#121212',
+                        cardBg: '#1A1A1A',
+                        cardBorder: '#2A2A2A',
+                        brandRed: '#A81C1C'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar for horizontal category navigation */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Gold gradient text effect */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF9E5 0%, #F3C453 50%, #AA820A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Gold gradient border */
+        .gold-border-gradient {
+            border-image: linear-gradient(to bottom, #D4AF37, #4A3B0F) 1;
+        }
+
+        /* Pulsing animation for order total button */
+        @keyframes subtlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        .animate-pulse-subtle {
+            animation: subtlePulse 2s infinite ease-in-out;
+        }
+
+        /* Smooth tab transition */
+        .tab-btn {
+            transition: all 0.25s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100 font-sans min-h-screen pb-28 antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- TOP HEADER WITH EMBEDDED LOGO SVG MATCHING NEW DESIGN -->
+    <header class="relative bg-gradient-to-b from-zinc-900 via-amberDark to-black border-b border-gold-500/30 pt-6 pb-5 px-4 text-center shadow-2xl">
+        <!-- Decorative Top Ornament -->
+        <div class="flex justify-center items-center gap-2 mb-2 text-gold-500 opacity-80">
+            <i class="fa-solid fa-crown text-xs"></i>
+            <div class="h-[1px] w-12 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+            <span class="text-[10px] tracking-widest uppercase font-semibold text-gold-400">Gaziantep Lezzeti</span>
+            <div class="h-[1px] w-12 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+            <i class="fa-solid fa-crown text-xs"></i>
+        </div>
+
+        <!-- RECREATED LOGO BADGE (Replicating user's input_file_1.png) -->
+        <div class="max-w-md mx-auto relative group">
+            <!-- Frame Container -->
+            <div class="border-2 border-gold-500/80 rounded-xl p-3 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black shadow-[0_0_25px_rgba(212,175,55,0.15)] relative overflow-hidden">
+                
+                <!-- Corner Ornaments -->
+                <div class="absolute top-1 left-1 text-gold-500/60 text-xs"><i class="fa-solid fa-bahai"></i></div>
+                <div class="absolute top-1 right-1 text-gold-500/60 text-xs"><i class="fa-solid fa-bahai"></i></div>
+                <div class="absolute bottom-1 left-1 text-gold-500/60 text-xs"><i class="fa-solid fa-bahai"></i></div>
+                <div class="absolute bottom-1 right-1 text-gold-500/60 text-xs"><i class="fa-solid fa-bahai"></i></div>
+
+                <!-- Citadel / Skyline Graphic Motif -->
+                <div class="flex justify-center items-end gap-1 mb-1 opacity-75">
+                    <i class="fa-solid fa-monument text-gold-400 text-lg"></i>
+                    <i class="fa-solid fa-[#d4af37] fa-city text-gold-500 text-xs"></i>
+                    <i class="fa-solid fa-fire-flame-curved text-amber-500 text-sm animate-pulse"></i>
+                    <i class="fa-solid fa-[#d4af37] fa-city text-gold-500 text-xs"></i>
+                    <i class="fa-solid fa-monument text-gold-400 text-lg"></i>
+                </div>
+
+                <!-- Main Brand Titles -->
+                <h2 class="text-xs font-bold tracking-[0.25em] text-gold-300 uppercase font-cinzel">ANTEPLİ</h2>
+                <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white font-cinzel gold-gradient-text drop-shadow-md my-0.5">
+                    ALİ EKBER USTA
+                </h1>
+                
+                <!-- KEBAPÇI subtitle with flanking skewered kebabs icons -->
+                <div class="flex items-center justify-center gap-2 my-1">
+                    <span class="h-[1px] w-8 bg-gold-500/60"></span>
+                    <span class="text-xs font-bold text-amber-400 tracking-widest font-cinzel uppercase"><i class="fa-solid fa-drumstick-bite mr-1 text-gold-500"></i> KEBAPÇI <i class="fa-solid fa-drumstick-bite ml-1 text-gold-500"></i></span>
+                    <span class="h-[1px] w-8 bg-gold-500/60"></span>
+                </div>
+
+                <!-- Red Banner (BY YENER) -->
+                <div class="mt-2 inline-block bg-gradient-to-r from-red-900 via-brandRed to-red-900 px-6 py-0.5 rounded-full border border-gold-500/50 shadow-md">
+                    <span class="text-[11px] font-extrabold tracking-widest text-gold-100 uppercase font-cinzel">BY YENER</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK ACTION BUTTONS (Paket Servis & Whatsapp) -->
+        <div class="max-w-md mx-auto grid grid-cols-2 gap-2.5 mt-4">
+            <!-- Phone Calls -->
+            <button onclick="togglePhoneModal()" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600 to-gold-600 hover:from-amber-500 hover:to-gold-500 text-black font-bold text-xs py-2.5 px-3 rounded-lg shadow-lg active:scale-95 transition">
+                <i class="fa-solid fa-phone text-sm"></i>
+                <span>PAKET SERVİS ARA</span>
+            </button>
+            
+            <!-- WhatsApp Direct Order -->
+            <a id="whatsappHeaderBtn" href="https://wa.me/905051937727?text=Merhaba,%20sipariş%20vermek%20istiyorum." target="_blank" class="flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs py-2.5 px-3 rounded-lg shadow-lg active:scale-95 transition">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>WHATSAPP SİPARİŞ</span>
+            </a>
+        </div>
+
+        <!-- LIVE SEARCH BAR -->
+        <div class="max-w-md mx-auto mt-3 relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+            <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Menüde lezzet ara... (Örn: Adana, Beyran, Pide)" 
+                   class="w-full pl-9 pr-8 py-2.5 bg-zinc-900/90 border border-zinc-700 focus:border-gold-500 text-gray-200 placeholder-gray-500 rounded-lg text-xs outline-none transition shadow-inner">
+            <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- STICKY HORIZONTAL CATEGORY NAVIGATION BAR -->
+    <nav class="sticky top-0 z-30 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 shadow-xl">
+        <div class="max-w-md mx-auto flex items-center overflow-x-auto no-scrollbar py-2.5 px-3 gap-2" id="categoryTabs">
+            <!-- Populated via JavaScript -->
+        </div>
+    </nav>
+
+    <!-- MAIN MENU CONTENT AREA -->
+    <main class="max-w-md mx-auto px-3.5 pt-4 space-y-6" id="menuContainer">
+        <!-- Categories and items will be dynamically rendered here -->
+    </main>
+
+    <!-- EMPTY SEARCH RESULTS NOTICE -->
+    <div id="noResults" class="hidden text-center py-12 px-4 max-w-md mx-auto">
+        <i class="fa-solid fa-utensils text-4xl text-zinc-700 mb-3"></i>
+        <p class="text-gray-400 text-sm">Aramanıza uygun lezzet bulunamadı.</p>
+        <button onclick="clearSearch()" class="mt-3 text-xs text-gold-400 font-semibold underline">Aramayı Temizle</button>
+    </div>
+
+    <!-- FLOATING CART / ORDER BOTTOM BAR -->
+    <div id="cartBar" class="fixed bottom-0 left-0 right-0 z-40 bg-zinc-900/95 backdrop-blur-md border-t border-gold-500/40 p-3 shadow-[0_-5px_20px_rgba(0,0,0,0.8)] transition-all duration-300 transform translate-y-full">
+        <div class="max-w-md mx-auto flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="openCartModal()">
+                <div class="relative bg-zinc-800 p-2.5 rounded-lg border border-gold-500/40 text-gold-400">
+                    <i class="fa-solid fa-basket-shopping text-lg"></i>
+                    <span id="cartCountBadge" class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border border-black">0</span>
+                </div>
+                <div>
+                    <div class="text-[10px] uppercase tracking-wider text-gray-400 font-medium">Sipariş Toplamı</div>
+                    <div id="cartTotalPrice" class="text-lg font-extrabold text-gold-400 font-cinzel">0 TL</div>
+                </div>
+            </div>
+
+            <button onclick="sendOrderViaWhatsApp()" class="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold text-xs py-3 px-4 rounded-lg shadow-lg flex items-center gap-2 animate-pulse-subtle">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>SİPARİŞİ GÖNDER</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- CART DETAIL MODAL -->
+    <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity">
+        <div class="bg-zinc-900 border border-gold-500/30 w-full max-w-md rounded-t-2xl sm:rounded-2xl max-h-[80vh] flex flex-col shadow-2xl overflow-hidden">
+            <!-- Modal Header -->
+            <div class="p-4 border-b border-zinc-800 flex justify-between items-center bg-zinc-950">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-receipt text-gold-400"></i>
+                    <h3 class="font-cinzel font-bold text-white text-base">Sipariş Özetiniz</h3>
+                </div>
+                <button onclick="closeCartModal()" class="text-gray-400 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Cart Items List -->
+            <div id="cartItemsList" class="p-4 overflow-y-auto space-y-3 divide-y divide-zinc-800 flex-1">
+                <!-- Cart items injected here -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-zinc-800 bg-zinc-950 space-y-3">
+                <div class="flex justify-between items-center text-sm font-bold">
+                    <span class="text-gray-300">Toplam Tutar:</span>
+                    <span id="modalTotalPrice" class="text-xl text-gold-400 font-cinzel">0 TL</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="closeCartModal()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-gray-300 text-xs font-semibold py-2.5 rounded-lg border border-zinc-700">
+                        Menüye Dön
+                    </button>
+                    <button onclick="sendOrderViaWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2.5 rounded-lg flex items-center justify-center gap-1.5 shadow">
+                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp'la İlet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHONE NUMBER MODAL -->
+    <div id="phoneModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-zinc-900 border border-gold-500/40 w-full max-w-sm rounded-xl p-5 text-center shadow-2xl space-y-4">
+            <div class="w-12 h-12 bg-gold-500/10 text-gold-400 border border-gold-500/30 rounded-full flex items-center justify-center mx-auto text-xl">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+            <div>
+                <h3 class="font-cinzel font-bold text-lg text-white">Paket Servis Hatlarımız</h3>
+                <p class="text-xs text-gray-400 mt-1">Aramak istediğiniz numaraya tıklayınız:</p>
+            </div>
+
+            <div class="space-y-2.5 pt-2">
+                <a href="tel:05051937727" class="flex items-center justify-between bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 p-3 rounded-lg transition text-left">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-gold-400 text-sm"></i>
+                        <span class="text-sm font-bold text-gray-200">0505 193 77 27</span>
+                    </div>
+                    <span class="text-xs text-gold-400 font-semibold">Ara <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></span>
+                </a>
+                <a href="tel:05459427885" class="flex items-center justify-between bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 p-3 rounded-lg transition text-left">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-gold-400 text-sm"></i>
+                        <span class="text-sm font-bold text-gray-200">0545 942 78 85</span>
+                    </div>
+                    <span class="text-xs text-gold-400 font-semibold">Ara <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></span>
+                </a>
+            </div>
+
+            <button onclick="togglePhoneModal()" class="w-full text-xs text-gray-400 hover:text-white pt-2">Kapat</button>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // DATA EXTRACTED ACCURATELY FROM THE MENU IMAGE
+        const menuData = [
+            {
+                id: "kebaplar",
+                title: "KEBAP ÇEŞİTLERİ",
+                icon: "fa-fire-flame-curved",
+                items: [
+                    { id: "k1", name: "Adana Kebap", price: 500, desc: "Zırh kıyması, özel acılı Antep baharatları ile" },
+                    { id: "k2", name: "Urfa Kebap", price: 500, desc: "Sade zırh kıyması, özel lezzet" },
+                    { id: "k3", name: "Patlıcanlı Kebap", price: 690, desc: "Közlenmiş köz patlıcan arasında nefis kebap" },
+                    { id: "k4", name: "Tavuk Şiş", price: 350, desc: "Özel marinasyonlu lokum tavuk göğsü" },
+                    { id: "k5", name: "Tavuk Pirzola", price: 350, desc: "Izgarada nar gibi kızarmış tavuk pirzola" },
+                    { id: "k6", name: "Kanat", price: 350, desc: "Özel soslu ızgara tavuk kanat" },
+                    { id: "k7", name: "Beyti Sarma", price: 700, desc: "Lavaşa sarılı, soslu ve tereyağlı özel beyti" },
+                    { id: "k8", name: "Ciğer Şiş", price: 500, desc: "Taze kuzu ciğeri ve özel kuyruk yağı ile" },
+                    { id: "k9", name: "Izgara Köfte", price: 450, desc: "Özel baharatlı anne köftesi lezzetinde" },
+                    { id: "k10", name: "Kuzu Şiş", price: 750, desc: "Yumuşacık dinlendirilmiş kuzu eti" },
+                    { id: "k11", name: "Pirzola", price: 750, desc: "Kuzu kalem pirzola ızgara" },
+                    { id: "k12", name: "Karışık Izgara", price: 850, desc: "Adana, Tavuk, Pirzola, Ciğer ve Köfte karışımı" }
+                ]
+            },
+            {
+                id: "durumler",
+                title: "DÜRÜM ÇEŞİTLERİ",
+                icon: "fa-scroll",
+                items: [
+                    { id: "d1", name: "Adana Dürüm", price: 225, desc: "Taze lavaşta yeşillik ve közlenmiş biber ile" },
+                    { id: "d2", name: "Urfa Dürüm", price: 225, desc: "Acısız zırh kıyması dürüm" },
+                    { id: "d3", name: "Tavuk Şiş Dürüm", price: 180, desc: "Izgara tavuk şiş dürüm" },
+                    { id: "d4", name: "Ciğer Şiş Dürüm", price: 250, desc: "Gaziantep usulü bol sumaklı ciğer dürüm" },
+                    { id: "d5", name: "Kuzu Şiş Dürüm", price: 320, desc: "Lavaşa sarılı özel kuzu şiş" }
+                ]
+            },
+            {
+                id: "pideler",
+                title: "PİDE ÇEŞİTLERİ",
+                icon: "fa-bread-slice",
+                items: [
+                    { id: "p1", name: "Kuşbaşılı Pide", price: 350, desc: "Özel doğranmış kuzu eti ve biber ile" },
+                    { id: "p2", name: "Kuşbaşı Kaşarlı Pide", price: 380, desc: "Kuşbaşı et ve erimiş kaşar peyniri" },
+                    { id: "p3", name: "Kıymalı Pide", price: 220, desc: "Geleneksel lezzette kıymalı harç" },
+                    { id: "p4", name: "Sucuklu Kaşarlı Pide", price: 290, desc: "Bol malzemeli sucuk ve kaşar" },
+                    { id: "p5", name: "Kaşarlı Pide", price: 230, desc: "Erimiş kaşar peynirli / sebzeli pide" },
+                    { id: "p6", name: "Kavurmalı Pide", price: 450, desc: "Özel kavurma eti ile fırınlanmış" },
+                    { id: "p7", name: "Karışık Pide", price: 400, desc: "Kuşbaşı, kıyma, sucuk ve kaşar karışımı" }
+                ]
+            },
+            {
+                id: "lahmacunlar",
+                title: "LAHMACUNLAR",
+                icon: "fa-circle-dot",
+                items: [
+                    { id: "l1", name: "Lahmacun", price: 100, desc: "Çıtır taş fırın Antep lahmacun" },
+                    { id: "l2", name: "Peymacun", price: 150, desc: "Antep peyniri ve özel baharat harçlı" }
+                ]
+            },
+            {
+                id: "corbalar",
+                title: "ÇORBA ÇEŞİTLERİ",
+                icon: "fa-bowl-food",
+                items: [
+                    { id: "c1", name: "Beyran", price: 450, desc: "Antep'in tescilli şifalı lezzeti (Kuzu eti, sarımsak, pirinç)" },
+                    { id: "c2", name: "Kelle Paça", price: 350, desc: "Geleneksel terbiye ve sarımsak sosu ile" },
+                    { id: "c3", name: "Tavuk Suyu", price: 100, desc: "Didiklenmiş tavuk etli besleyici çorba" },
+                    { id: "c4", name: "Ezo Gelin", price: 100, desc: "Nane ve pul biber yağı ile" },
+                    { id: "c5", name: "Mercimek", price: 100, desc: "Süzme sarı mercimek çorbası" },
+                    { id: "c6", name: "İşkembe", price: 200, desc: "Özel sarımsak ve sirke sosu eşliğinde" }
+                ]
+            },
+            {
+                id: "anayemekler",
+                title: "ANA YEMEKLER",
+                icon: "fa-utensils",
+                items: [
+                    { id: "a1", name: "Tavuk Sote", price: 250, desc: "Domates ve biber eşliğinde tava sote" },
+                    { id: "a2", name: "Et Sote", price: 400, desc: "Lokum kuzu eti sote" },
+                    { id: "a3", name: "Maraş Eli Böğründe", price: 650, desc: "Fırında sarımsaklı ve domatesli tepsi eti" },
+                    { id: "a4", name: "Hatay Kağıt Kebabı", price: 450, desc: "Zırh kıymasından kağıtta pişmiş yöresel kebap" },
+                    { id: "a5", name: "Saç Tava", price: 500, desc: "Cızır cızır saçta pişmiş lezzet bombası" }
+                ]
+            },
+            {
+                id: "arasicaklar",
+                title: "ARA SICAKLAR",
+                icon: "fa-plate-wheat",
+                items: [
+                    { id: "as1", name: "İçli Köfte (Adet)", price: 125, desc: "El açması çıtır Antep usulü içli köfte" },
+                    { id: "as2", name: "Fındık Lahmacun", price: 75, desc: "Küçük porsiyon atıştırmalık lahmacun" }
+                ]
+            },
+            {
+                id: "tatlilar",
+                title: "TATLI ÇEŞİTLERİ",
+                icon: "fa-stroopwafel",
+                items: [
+                    { id: "t1", name: "Baklava", price: 150, desc: "Antep fıstıklı çıtır ev baklavası" },
+                    { id: "t2", name: "Kazandibi", price: null, desc: "(Fiyat sorunuz)" },
+                    { id: "t3", name: "Sütlaç", price: null, desc: "(Fiyat sorunuz)" }
+                ]
+            }
+        ];
+
+        // CART STATE
+        let cart = {}; // key: item.id, value: { item, qty }
+
+        // INITIALIZE APP
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTabs();
+            renderMenu();
+        });
+
+        // RENDER CATEGORY NAVIGATION TABS
+        function renderTabs() {
+            const tabsContainer = document.getElementById('categoryTabs');
+            let html = '';
+            
+            menuData.forEach((cat, index) => {
+                const activeClass = index === 0 ? 'bg-gold-500 text-black font-bold shadow-md' : 'bg-zinc-900 text-gray-300 hover:bg-zinc-800 border border-zinc-800';
+                html += `
+                    <button onclick="scrollToCategory('${cat.id}', this)" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs transition flex items-center gap-1.5 ${activeClass}">
+                        <i class="fa-solid ${cat.icon} text-xs"></i>
+                        <span>${cat.title}</span>
+                    </button>
+                `;
+            });
+            
+            tabsContainer.innerHTML = html;
+        }
+
+        // RENDER ALL MENU ITEMS
+        function renderMenu(filterText = '') {
+            const menuContainer = document.getElementById('menuContainer');
+            const noResults = document.getElementById('noResults');
+            let hasResults = false;
+            let html = '';
+
+            menuData.forEach(cat => {
+                // Filter items if searching
+                const filteredItems = cat.items.filter(item => 
+                    item.name.toLowerCase().includes(filterText.toLowerCase()) || 
+                    item.desc.toLowerCase().includes(filterText.toLowerCase())
+                );
+
+                if (filteredItems.length > 0) {
+                    hasResults = true;
+                    html += `
+                        <section id="${cat.id}" class="scroll-mt-24">
+                            <!-- Category Header -->
+                            <div class="flex items-center gap-2 mb-3 pb-1 border-b border-gold-500/30">
+                                <i class="fa-solid ${cat.icon} text-gold-400 text-sm"></i>
+                                <h3 class="font-cinzel font-bold text-base text-gold-300 tracking-wide">${cat.title}</h3>
+                                <span class="text-[10px] text-zinc-500 ml-auto">(${filteredItems.length})</span>
+                            </div>
+
+                            <!-- Category Items Grid -->
+                            <div class="space-y-2.5">
+                    `;
+
+                    filteredItems.forEach(item => {
+                        const qty = cart[item.id] ? cart[item.id].qty : 0;
+                        const priceDisplay = item.price !== null ? `${item.price} TL` : 'Fiyat Sorunuz';
+
+                        html += `
+                            <div class="bg-zinc-900/90 border border-zinc-800 hover:border-gold-500/40 rounded-xl p-3 flex justify-between items-center gap-3 transition shadow-md">
+                                <div class="flex-1 pr-1">
+                                    <div class="font-bold text-sm text-gray-100 flex items-center gap-1.5">
+                                        <span>${item.name}</span>
+                                    </div>
+                                    <p class="text-[11px] text-gray-400 mt-0.5 line-clamp-2 leading-tight">${item.desc}</p>
+                                    <div class="text-xs font-black text-gold-400 font-cinzel mt-1.5">${priceDisplay}</div>
+                                </div>
+
+                                <!-- Add / Remove Quantity Buttons -->
+                                <div class="flex items-center bg-zinc-950 border border-zinc-700/80 rounded-lg p-1 gap-2 shadow-inner">
+                                    ${qty > 0 ? `
+                                        <button onclick="updateQty('${item.id}', -1)" class="w-6 h-6 bg-zinc-800 hover:bg-zinc-700 text-gold-400 rounded flex items-center justify-center font-bold text-xs transition active:scale-90">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span class="text-xs font-bold text-white w-4 text-center">${qty}</span>
+                                    ` : ''}
+                                    <button onclick="updateQty('${item.id}', 1)" class="w-6 h-6 bg-gold-500 hover:bg-gold-400 text-black rounded flex items-center justify-center font-bold text-xs transition active:scale-90">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    html += `
+                            </div>
+                        </section>
+                    `;
+                }
+            });
+
+            menuContainer.innerHTML = html;
+
+            if (!hasResults && filterText !== '') {
+                noResults.classList.remove('hidden');
+                menuContainer.classList.add('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                menuContainer.classList.remove('hidden');
+            }
+        }
+
+        // SCROLL TO CATEGORY ON TAB CLICK
+        function scrollToCategory(catId, btnElement) {
+            // Update Tab styling
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = 'tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs transition flex items-center gap-1.5 bg-zinc-900 text-gray-300 hover:bg-zinc-800 border border-zinc-800';
+            });
+            btnElement.className = 'tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs transition flex items-center gap-1.5 bg-gold-500 text-black font-bold shadow-md';
+
+            // Smooth Scroll
+            const target = document.getElementById(catId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // SEARCH FUNCTIONALITY
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value;
+            const clearBtn = document.getElementById('clearSearchBtn');
+            
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            renderMenu(query);
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('searchInput');
+            input.value = '';
+            document.getElementById('clearSearchBtn').classList.add('hidden');
+            renderMenu('');
+        }
+
+        // CART QUANTITY MANAGER
+        function updateQty(itemId, change) {
+            // Find item from data
+            let foundItem = null;
+            for (const cat of menuData) {
+                const item = cat.items.find(i => i.id === itemId);
+                if (item) {
+                    foundItem = item;
+                    break;
+                }
+            }
+
+            if (!foundItem) return;
+
+            if (!cart[itemId]) {
+                cart[itemId] = { item: foundItem, qty: 0 };
+            }
+
+            cart[itemId].qty += change;
+
+            if (cart[itemId].qty <= 0) {
+                delete cart[itemId];
+            }
+
+            // Refresh UI
+            const searchQuery = document.getElementById('searchInput').value;
+            renderMenu(searchQuery);
+            updateCartBar();
+            renderCartModalList();
+        }
+
+        // UPDATE FLOATING CART BAR
+        function updateCartBar() {
+            const cartBar = document.getElementById('cartBar');
+            const cartCountBadge = document.getElementById('cartCountBadge');
+            const cartTotalPrice = document.getElementById('cartTotalPrice');
+
+            let totalCount = 0;
+            let totalPrice = 0;
+
+            Object.values(cart).forEach(entry => {
+                totalCount += entry.qty;
+                if (entry.item.price !== null) {
+                    totalPrice += entry.item.price * entry.qty;
+                }
+            });
+
+            if (totalCount > 0) {
+                cartBar.classList.remove('translate-y-full');
+                cartCountBadge.textContent = totalCount;
+                cartTotalPrice.textContent = `${totalPrice} TL`;
+                document.getElementById('modalTotalPrice').textContent = `${totalPrice} TL`;
+            } else {
+                cartBar.classList.add('translate-y-full');
+                closeCartModal();
+            }
+        }
+
+        // CART MODAL LOGIC
+        function openCartModal() {
+            renderCartModalList();
+            const modal = document.getElementById('cartModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCartModal() {
+            const modal = document.getElementById('cartModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function renderCartModalList() {
+            const listContainer = document.getElementById('cartItemsList');
+            let html = '';
+
+            const entries = Object.values(cart);
+            if (entries.length === 0) {
+                listContainer.innerHTML = '<p class="text-center text-gray-500 text-xs py-6">Sepetiniz şu anda boş.</p>';
+                return;
+            }
+
+            entries.forEach(entry => {
+                const item = entry.item;
+                const priceText = item.price !== null ? `${item.price * entry.qty} TL` : 'Fiyat Sorunuz';
+
+                html += `
+                    <div class="pt-2 first:pt-0 flex justify-between items-center gap-2">
+                        <div class="flex-1">
+                            <h4 class="text-xs font-bold text-gray-200">${item.name}</h4>
+                            <span class="text-[11px] text-gold-400 font-cinzel font-bold">${priceText}</span>
+                        </div>
+
+                        <div class="flex items-center bg-zinc-950 border border-zinc-700 rounded-lg p-1 gap-2">
+                            <button onclick="updateQty('${item.id}', -1)" class="w-5 h-5 bg-zinc-800 hover:bg-zinc-700 text-gold-400 rounded flex items-center justify-center font-bold text-xs">
+                                <i class="fa-solid fa-minus text-[9px]"></i>
+                            </button>
+                            <span class="text-xs font-bold text-white w-4 text-center">${entry.qty}</span>
+                            <button onclick="updateQty('${item.id}', 1)" class="w-5 h-5 bg-gold-500 hover:bg-gold-400 text-black rounded flex items-center justify-center font-bold text-xs">
+                                <i class="fa-solid fa-plus text-[9px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            listContainer.innerHTML = html;
+        }
+
+        // PHONE MODAL LOGIC
+        function togglePhoneModal() {
+            const modal = document.getElementById('phoneModal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // WHATSAPP ORDER GENERATOR
+        function sendOrderViaWhatsApp() {
+            const entries = Object.values(cart);
+            if (entries.length === 0) {
+                alert("Lütfen önce menüden sipariş vermek istediğiniz ürünleri ekleyin.");
+                return;
+            }
+
+            let message = "Merhaba Antepli Ali Ekber Usta Kebapçı,%0A%0A*Sipariş Detaylarım:*%0A";
+            let grandTotal = 0;
+
+            entries.forEach(entry => {
+                const priceCalc = entry.item.price !== null ? `${entry.item.price * entry.qty} TL` : 'Fiyat Sorunuz';
+                message += `• ${entry.qty} x ${entry.item.name} (${priceCalc})%0A`;
+                if (entry.item.price !== null) {
+                    grandTotal += entry.item.price * entry.qty;
+                }
+            });
+
+            message += `%0A*Tahmini Toplam:* ${grandTotal} TL%0A%0AAdres ve Teslimat Bilgilerim:`;
+
+            // WhatsApp link to 0505 193 77 27
+            const whatsappUrl = `https://wa.me/905051937727?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
